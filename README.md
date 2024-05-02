@@ -41,7 +41,7 @@ It's imperative to enable access to sustainable living solutions through technol
 
 ## Demo video
 
-[![Watch the video](./uploads/logo.jpg)](https://youtube.com/clip/Ugkxl2OrCbpKrbdCJPHYMxnp1SlrmlniqvsL?si=mmtPGJMkSWxDw6re)
+[![Watch the video](./uploads/logo.png)](https://youtube.com/clip/Ugkxl2OrCbpKrbdCJPHYMxnp1SlrmlniqvsL?si=mmtPGJMkSWxDw6re)
 
 1. The user navigates to the app and uploads an image file.
 2. Within the code engine, front end parses and send it to Router.
