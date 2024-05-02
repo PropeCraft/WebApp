@@ -17,7 +17,6 @@ Gardening Designs: Find inspiration for sustainable and eco-friendly gardening i
 
 1. [Short description](#short-description)
 1. [Demo video](#demo-video)
-1. [The architecture](#the-architecture)
 1. [Long description](#long-description)
 1. [Project roadmap](#project-roadmap)
 1. [Getting started](#getting-started)
@@ -31,64 +30,45 @@ Gardening Designs: Find inspiration for sustainable and eco-friendly gardening i
  ideas, recommendations, and tips for sustainable and eco-friendly designs with our super advanced AI tool.
 
 ### What's the problem?
-FAO estimates that annually between 20 to 40 percent of global crop production are lost to pests. Each year, plant diseases cost the global economy around $220 billion, and invasive insects around US$70 billion. As per UN, there are about 821 million people estimated to be chronically undernourished and over 90 million children under five are dangerously underweight. This is not only affecting the farmers but all the living being of our planet by creating scarity of food and leading hunger, mal nourishment etc.
-
+Sustainable architectural design is crucial for reducing the environmental impact of the construction industry. It helps conserve natural resources, reduce energy consumption, minimize waste generation, improve indoor air quality, and mitigate biodiversity loss. Additionally, it offers economic benefits, such as cost savings and increased property values. As regulations and standards promoting sustainability increase, adopting sustainable architectural design practices becomes more important for a greener future.
 
 ### How can technology help?
 
-With Dhaan – we plan to use technology for helping the farmers to produce organic food produce, connecting coops to farmers effectively and enabling the general public to get access to nutritious and organically grown food without any hassle. Moreover we will be enabling the public to donate excess food that they have thus bringing in a balance.
-Dhaan will be in alignment of UN’s SDG goal of ending all forms of hunger and malnutrition by 2030, making sure all people–especially children–have sufficient and nutritious food all year.
+With PropeCraft, we aim to revolutionize sustainable living through technology. By leveraging advanced AI and data analytics, we want to provide users with personalized recommendations and insights for creating eco-friendly and sustainable living spaces. Through interactive tools and visualizations, users can explore various design options, materials, and energy-efficient solutions tailored to their needs. 
 
-And as sub module of DHAAN we have developed Crop Doctor to identify plant diseases in wide variety of plants.
+We want to empower users to make informed decisions that not only enhance their living spaces but also contribute to a healthier planet.
 
 ### The idea
 
-It's imperative that enabling access to healthy and nourished food is the crux of a food chain.  With Crop Dr, we are providing a set of open source tools, backed by IBM Cloud and Watson Services, will empower farmers to grow crops with appropriate protection from dieases.
+It's imperative to enable access to sustainable living solutions through technology backed by Google Generative AI tools.
 
 ## Demo video
 
 [![Watch the video](./images/preview_image.jpg)](https://www.youtube.com/watch?v=ps6iUlIUpgw)
 
-## The architecture
-
-![Architecture](./images/Arch_dhaan.png)
-
-
 1. The user navigates to the app and uploads an image file.
 2. Within the code engine, front end parses and send it to Router.
-3. The Router processes it and sends the image to AI/ML engine via APIs
-4. The AI/ML engine performs feature selection / extraction etc then predicts using the Densenet121 algorithm
+3. The Router processes it and sends the image to AI/ML(aistudio_gemini_prompt_freeform) engine via APIs
+4. The AI/ML(Google Generative AI) tool deeply analyze and process the image and then returns the response with suggestions/ideas
 5. Router parses and hands the result to front end
-6. Output is given to the user in regional text (IBM Translate) as well as with option to listen in regional language (IBM Text to Speech)
+6. Output is given to the user in regional text.
 
 
 ## Long description
 
-Crop Doctor (a sub module of DHAAN) allows the user to easily upload an image of a crop or a plant directly from any device.
+PropeCraft is to help you craft your dream sustainable space. We provide ideas, recommendations, and tips for sustainable and eco-friendly interior design, home decor, and living.
 
-Once uploaded, Crop Doctor is then able to provide an in depth explanation of whether the crop has a disease or not and organic/traditional ways to prevent them in the future.
-To achieve the same Crop Doctor uses state of the art Densenet 121 algorithm for prediction combined with IBM code engine that makes deployment a breeze. Also by using IBM Translate and IBM Text to Speech, Crop Doctor will provide a hyper personalized end user experience.
+Features:
 
+Makeover Visualizations: Get visualizations and recommendations for interior design and decorative ideas tailored to your space.
+Balcony Designs: Discover creative and sustainable designs for your balcony or outdoor space.
+Choose Your Colors & Paints: Explore a range of colors and paints that are eco-friendly and sustainable for your home.
+Gardening Designs: Find inspiration for sustainable and eco-friendly gardening ideas to enhance your living space.
 With this, Crop Doctor helps farmers to tackle the high level of uncertainty  and destruction in crop plantations.
 
-## Project roadmap
+## What Next ?
 
-The project currently does the following things.
-
-- Crop disease identification using Densenet121 algorithm
-- Recommended methods to prevent the disease
-- English to Hindi coversion of the results text using IBM Text to Text translate (Note: PoC tested successfully and needs integration)
-- English to German conversoin of the results to audio (in mp3 format) using IBM Text to Speech audio services (Note: PoC tested successfully and needs integration)
-
-Currently the front end and the router component of the architecture is hosted in IBM code engine and the AI prediction is happening outside IBM cloud. In the future we plan to run the AI prediction also within IBM cloud, for example.
-
-Key Future work includes:
-- Integration of English to Hindi coversion of the results text using IBM Text to Text translate to the front end
-- English to German conversoin of the results to audio (in mp3 format) using IBM Text to Speech audio services to the front end
-- Develop the DHAAN app to provide additonal services
-
-See below for our proposed schedule on next steps after Call for Code 2021 submission.
-![Roadmap](./images/DHAAN_Updated_Product_Roadmap.png)
+Next, PropeCraft is the integration of a language translation model to make the platform more accessible to users from diverse linguistic backgrounds, we are planning to expand its platform to include a wider range of sustainable living solutions beyond interior design. This includes tips for energy efficiency, waste reduction, water conservation, and more. And also plans to integrate community features, allowing users to share their own sustainable home projects and ideas, creating a vibrant community of like-minded individuals committed to sustainable living.
 
 ## Getting started
 
@@ -100,20 +80,20 @@ This code works on Python3+ versions.
 
 ## With Docker:
 
-$ git clone https://github.com/zero-hunger-cfc-2k21/DHAAN-Plant-Disease-Prediction-Model.git
+$ git clone https://github.com/PropeCraft/WebApp.git
 
-$ DHAAN-Plant-Disease-Prediction-Model/
+$ WebApp/
 
 ## Install Docker
 https://docs.docker.com/engine/install/ubuntu/
 
 ## Build docker image
 
-$ docker build -t dhaan_docker .
+$ docker build -t propecraft_docker .
 
-Note: ensure in app.py port is mentiond as 8080
+Note: ensure in app.py port is mentioned as 8080
 
-$ docker run -it -p 8080:8080 dhaan_docker
+$ docker run -it -p 8080:8080 propecraft_docker
 
 In Browser run with 127.0.0.1:8080
 
@@ -125,9 +105,9 @@ $docker login
 
   Password: XXXX
 
-$ docker tag dhaan_docker dhaan/dhaan_docker:1.0.0
+$ docker tag propecraft_docker propecraft/propecraft_docker:1.0.0
 
-$ docker push dhaan/dhaan_docker:1.0.0
+$ docker push propecraft/propecraft_docker:1.0.0
 
 ## Without Docker:
 
@@ -137,9 +117,9 @@ $ pip3 install -r requirements.txt
 
 ## Clone the repository
 
-$ git clone https://github.com/zero-hunger-cfc-2k21/DHAAN-Plant-Disease-Prediction-Model.git
+$ git clone https://github.com/PropeCraft/WebApp.git
 
-$ DHAAN-Plant-Disease-Prediction-Model/
+$ webApp/
 
 ## Run app.py
 
@@ -151,33 +131,10 @@ $ python -m flask run
 
 In Browser run with 127.0.0.1:5000
 
-## Live Demo Url:
-
-https://app-c1.a3bnbtend2e.jp-tok.codeengine.appdomain.cloud/
-
-
-## Built with
-
-- [IBM Cloud](https://cloud.ibm.com/) - Hosted in IBM Cloud
-- [IBM Code Engine](https://cloud.ibm.com/login?redirect=%2Fcodeengine%2Flanding) - Deployment platform
-- [IBM Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech) - For converting results into speech audio in regional languages
-- [IBM Language Translator](https://cloud.ibm.com/catalog/services/language-translator) - For converting results from English to regional languages
-- [Figma](www.figma.com) - For UI design
-- [Keras Framework](https://keras.io) - For AI/ML modelling
-- [Densenet121](https://keras.io/api/applications/densenet/) - For prediction
-- Trained Model Url : https://drive.google.com/file/d/1WF8kWRRYEUt3zxgRUBJdY93P4KWlfCC2/view?usp=sharing
-
 ## Authors
 - **Suneetha Jonadula** - _Lead Developer_
-- **Bharathi Athinarayanan** - _Architect_
-- **Furqan Yaqub Khan** - _Backend Engineer_
-- **Zaynob Sumon** - _UI/UX Designer_
-- **Raghavendra K**
 
 ## License
 
 This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- Ms. Rema - Agri expert ( http://www.isdindia.org/)
